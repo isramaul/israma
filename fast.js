@@ -37,7 +37,7 @@ async function processAddress(addressData) {
                 fs.appendFileSync('private-keys.txt', `${address},${privateKey}\n`);
             } else {
                 //#console.log(address, 0);
-            }   console.log();
+            }  // console.log();
         });
     }
 })();
