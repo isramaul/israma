@@ -3,7 +3,9 @@ const ethers = require('ethers');
 require('colors');
 
 // WebSocket provider for Ethereum
-const provider = new ethers.providers.JsonRpcProvider('https://eth-mainnet.g.alchemy.com/v2/yxiWiL20IfU9QFDGpe8ZVGAJZ3-2BH4G');
+const provider = new ethers.providers.WebSocketProvider(
+    'wss://eth-mainnet.g.alchemy.com/v2/yxiWiL20IfU9QFDGpe8ZVGAJZ3-2BH4G'
+)
 
 // Read addresses from the file
 const addresses = fs
@@ -22,7 +24,7 @@ async function processAddress(addressData) {
 
 // Main function to process addresses in parallel with a batch of 5
 (async () => {
-    const numProcesses = 25;
+    const numProcesses = 7;
 
     // Loop through addresses and process them in parallel batches of 5
     for (let i = 0; i < addresses.length; i += numProcesses) {
