@@ -24,7 +24,7 @@ async function processAddress(addressData) {
 
 // Main function to process addresses in parallel with a batch of 5
 (async () => {
-    const numProcesses = 7;
+    const numProcesses = 8;
 
     // Loop through addresses and process them in parallel batches of 5
     for (let i = 0; i < addresses.length; i += numProcesses) {
